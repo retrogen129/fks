@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Tyleni Foundation</title>
+    <meta name="description" content="Tyleni Foundation, an Independent Initiative!">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🦭%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+    <style>
+:root{
+  --primary:#2D5F8B;--on-primary:#fff;--primary-c:#CFE4FF;--on-primary-c:#001D36;
+  --secondary-c:#D8E3F3;--on-secondary-c:#101C2B;
+  --tertiary-c:#FFDDB5;--on-tertiary-c:#2A1700;
+  --surface:#F6F9FF;--on-surface:#181C20;--surface-hi:#DCE3EC;--on-var:#41474E;
+  --spring:cubic-bezier(.34,1.56,.64,1);
+}
+@media (prefers-color-scheme:dark){:root{
+  --primary:#9FCAFF;--on-primary:#003258;--primary-c:#004A79;--on-primary-c:#CFE4FF;
+  --secondary-c:#3A4757;--on-secondary-c:#D8E3F3;
+  --tertiary-c:#693C00;--on-tertiary-c:#FFDDB5;
+  --surface:#101417;--on-surface:#E0E2E8;--surface-hi:#262A2F;--on-var:#C2C7CF;
+}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Roboto Flex",system-ui,sans-serif;background:var(--surface);color:var(--on-surface);line-height:1.5;padding-bottom:110px;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+.wrap{max-width:1100px;margin-inline:auto;padding-inline:20px}
+section{margin-top:64px}
+
+/* hero: the seal comes first */
+.hero{display:grid;gap:24px;padding:12px 12px 0;max-width:1200px;margin-inline:auto}
+.seal{height:min(78svh,640px);overflow:hidden;background:var(--surface-hi);border-radius:56px 56px 168px 56px;transition:border-radius .8s var(--spring);animation:settle 1.3s var(--spring) backwards}
+.seal:hover,.seal:active{border-radius:168px 56px 56px 56px}
+.seal img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+@keyframes settle{from{border-radius:50%;transform:scale(.9)}}
+.hero-text{padding:4px 12px 8px}
+h1{font-size:clamp(2.7rem,12.5vw,7.5rem);line-height:.92;font-weight:800;font-variation-settings:"wdth" 115,"opsz" 144;letter-spacing:-.02em;color:var(--primary)}
+.sub{margin-top:16px;font-size:1.25rem;font-weight:500;color:var(--on-var)}
+.lead{margin-top:12px;max-width:46ch;font-size:1.05rem}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+
+/* buttons: shape morphs on press */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border:0;border-radius:28px;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;color:inherit;transition:border-radius .35s var(--spring),transform .35s var(--spring)}
+.btn:hover{border-radius:16px}
+.btn:active{border-radius:10px;transform:scale(.97)}
+.fill{background:var(--primary);color:var(--on-primary)}
+.tonal{background:var(--secondary-c);color:var(--on-secondary-c)}
+.ghost{background:transparent;box-shadow:inset 0 0 0 2px currentColor}
+
+h2{font-size:clamp(2rem,7vw,3.5rem);line-height:1;font-weight:750;font-variation-settings:"wdth" 110;letter-spacing:-.01em;margin-bottom:24px}
+
+.mission{background:var(--primary-c);color:var(--on-primary-c);border-radius:40px 120px 40px 40px;padding:32px 28px;font-size:clamp(1.4rem,4.4vw,2.1rem);font-weight:500;line-height:1.28}
+
+/* project cards */
+.grid{display:grid;gap:12px}
+.card{display:flex;flex-direction:column;gap:12px;padding:28px;min-height:230px}
+.card h3{font-size:1.8rem;line-height:1.1;font-weight:700;font-variation-settings:"wdth" 110}
+.card p{max-width:44ch}
+.status{align-self:flex-start;padding:6px 14px;border-radius:12px;font-size:.9rem;font-weight:600;background:color-mix(in srgb,currentColor 14%,transparent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.card:nth-child(4n+1){background:var(--primary-c);color:var(--on-primary-c);border-radius:36px 36px 36px 110px}
+.card:nth-child(4n+2){background:var(--secondary-c);color:var(--on-secondary-c);border-radius:36px 110px 36px 36px}
+.card:nth-child(4n+3){background:var(--tertiary-c);color:var(--on-tertiary-c);border-radius:110px 36px 36px 36px}
+.card:nth-child(4n+4){background:var(--surface-hi);color:var(--on-surface);border-radius:36px 36px 110px 36px}
+
+/* connected button group */
+.group{display:flex;gap:4px;max-width:560px}
+.group .btn{flex:1;padding:0 12px;border-radius:8px}
+.group .btn:first-child{border-radius:28px 8px 8px 28px}
+.group .btn:last-child{border-radius:8px 28px 28px 8px}
+.group .btn:active{border-radius:28px}
+
+footer{margin-top:72px;color:var(--on-var);font-size:.95rem;display:flex;flex-wrap:wrap;gap:4px 24px}
+
+/* floating toolbar */
+.bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:5;display:flex;gap:4px;padding:6px;border-radius:32px;background:var(--surface-hi);box-shadow:0 6px 24px rgb(0 0 0/.2);max-width:calc(100% - 24px)}
+.bar a{padding:12px 16px;border-radius:24px;font-size:.95rem;font-weight:600;text-decoration:none;color:var(--on-surface);transition:border-radius .3s var(--spring)}
+.bar a:active{border-radius:10px}
+.bar a:last-child{background:var(--primary);color:var(--on-primary)}
+
+@media(min-width:760px){
+  .grid{grid-template-columns:repeat(6,1fr)}
+  .card:nth-child(4n+1){grid-column:span 4}
+  .card:nth-child(4n+2){grid-column:span 2}
+  .card:nth-child(4n+3),.card:nth-child(4n+4){grid-column:span 3}
+  .card:last-child:nth-child(4n+1),.card:last-child:nth-child(4n+3){grid-column:span 6}
+}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.1fr 1fr;align-items:center;gap:48px;padding:16px}
+  .seal{height:min(86svh,760px)}
+  .hero-text{padding:0 24px 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+  </head>
+  <body>
+    <header class="hero">
+      <figure class="seal">
+        <img src="https://res.cloudinary.com/dco1cpiog/image/upload/v1776954915/Seal_lying_on_rock_covered_with_snow__Unsplash_1_sxnco5.jpg" alt="A seal lying on a snow-covered rock" fetchpriority="high">
+      </figure>
+      <div class="hero-text">
+        <h1>Tyleni<br>Foundation</h1>
+        <p class="sub">an independent initiative</p>
+        <p class="lead">Tools, servers and experiments from one cool seal and friends.</p>
+        <div class="actions">
+          <a class="btn fill" href="#projects">See projects</a>
+          <a class="btn tonal" href="#links">Find us</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="about" class="wrap">
+        <p class="mission">Tyleni Foundation is a small home for things built for fun and shared with anyone who wants them...</p>
+      </section>
+      <section id="projects" class="wrap">
+        <h2>projects</h2>
+        <div class="grid" id="projects-grid">
+        </div>
+      </section>
+      <section id="links" class="wrap">
+        <h2>links</h2>
+        <div class="group">
+          <a class="btn tonal" href="https://www.tiktok.com/@retroggen">tiktok</a>
+          <a class="btn tonal" href="https://t.me/byteseal">telegram</a>
+          <a class="btn fill" href="#">donationalert</a>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <p>all rights reversed.</p>
+      <p>tyleni.com</p>
+    </footer>
+    <nav class="bar" aria-label="Sections">
+      <a href="#about">about</a>
+      <a href="#projects">projects</a>
+      <a href="#links">links</a>
+    </nav>
+    <script>
+/* ADD A PROJECT: copy one { ... } block below, edit it, keep the comma.
+   title is required. status, text, links are optional.
+   links: { label, href, primary:true } for a button,
+          { label, copy:"text" } for a copy-to-clipboard button. */
+var PROJECTS=[
+  {title:"Project Tylenius",status:"active",text:"A collective space for multiple projects across different fields and topics.",
+   links:[{label:"View Telegram",href:"https://telegram.dog/tylenius",primary:true}]},
+  {title:"Mountain Flight Radar",status:"archived",text:"A Python programme to track flights and aircraft in your area.",
+  links:[{label:"Github Repository",href:"https://github.com/retroggen/mountain",primary:true}]},
+  {title:"Tylenius MS",status:"active",text:"A Minecraft server on version 1.20.1 Fabric.",
+   links:[{label:"tylenius.aternos.me:40815",copy:"tylenius.aternos.me:40815"},{label:"Mods",href:"https://t.me/tylenius/2",primary:true}]},
+  {title:"The Atrium",status:"coming soon",text:"releases on december 12, 2026"}
+];
+
+(function(){
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e}
+  var grid=document.getElementById('projects-grid');
+  PROJECTS.forEach(function(p){
+    var card=el('article','card');
+    if(p.status)card.appendChild(el('span','status',p.status));
+    card.appendChild(el('h3','',p.title));
+    if(p.text)card.appendChild(el('p','',p.text));
+    if(p.links&&p.links.length){
+      var row=el('div','row');
+      p.links.forEach(function(l){
+        var b;
+        if(l.copy){b=el('button','btn ghost',l.label);b.type='button';b.dataset.copy=l.copy}
+        else{b=el('a','btn '+(l.primary?'fill':'tonal'),l.label);b.href=l.href||'#'}
+        row.appendChild(b);
+      });
+      card.appendChild(row);
+    }
+    grid.appendChild(card);
+  });
+  document.addEventListener('click',async function(e){
+    var b=e.target.closest('[data-copy]');if(!b)return;
+    var t=b.textContent;
+    try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='copied'}
+    catch(err){b.textContent='select and copy'}
+    setTimeout(function(){b.textContent=t},1500);
+  });
+})();
+</script>
+  </body>
+</html>
