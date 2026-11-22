@@ -1,16 +1,12 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-
   <title>Tyleni Foundation</title>
   <meta name="description" content="Tyleni Foundation, an Independent Initiative!">
-
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🦭%3C/text%3E%3C/svg%3E">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
@@ -76,19 +72,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background */
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background:
-    radial-gradient(ellipse at 10% 10%, rgba(100,165,225,.16), transparent 40%),
-    radial-gradient(ellipse at 90% 30%, rgba(145,180,220,.13), transparent 40%),
-    radial-gradient(ellipse at 50% 100%, rgba(90,140,190,.10), transparent 45%);
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at 15% 10%,
+        rgba(100,165,225,.09),
+        transparent 55%
+    );
 }
 
 ::selection {
@@ -110,7 +105,6 @@ section {
   margin-top: 90px;
 }
 
-/* Hero */
 
 .hero {
   display: grid;
@@ -393,8 +387,8 @@ footer {
   border-radius: 20px;
 
   background: var(--surface);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
 
   box-shadow: 0 8px 35px rgba(0,0,0,.12);
 }
